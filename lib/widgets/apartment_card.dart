@@ -148,7 +148,7 @@ class ApartmentCard extends StatelessWidget {
                             ],
                           ),
                           child: Text(
-                            '\$${_formatPrice(apartment.price)}',
+                            '\$${_formatPrice(apartment.price.toInt())}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
@@ -184,7 +184,7 @@ class ApartmentCard extends StatelessWidget {
                       const SizedBox(width: 6),
                       Expanded(
                         child: Text(
-                          apartment.address,
+                          apartment.city,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(

@@ -14,7 +14,7 @@ Future<void> main() async {
   final start = (token != null && token.trim().isNotEmpty)
       ? AppRoutes.home
       : AppRoutes.login;
-  runApp(MyApp(initialRoute: start));
+  runApp(const MyApp(initialRoute: AppRoutes.login));
 }
 
 class MyApp extends StatelessWidget {

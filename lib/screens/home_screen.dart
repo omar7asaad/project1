@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   final HouseController controller = Get.isRegistered<HouseController>()
       ? Get.find<HouseController>()
       : Get.put(HouseController(), permanent: true);
+      
 
   static const Color _primary = Color(0xFF054239);
   static const Color _gold = Color(0xFFB9A779);
@@ -22,6 +23,8 @@ class HomeScreen extends StatelessWidget {
     final minCtrl = TextEditingController(text: controller.minPrice.value?.toString() ?? '');
     final maxCtrl = TextEditingController(text: controller.maxPrice.value?.toString() ?? '');
     final roomsCtrl = TextEditingController(text: controller.rooms.value?.toString() ?? '');
+    
+    
 
     await showModalBottomSheet(
       context: context,
@@ -149,6 +152,7 @@ class HomeScreen extends StatelessWidget {
         style: TextStyle(fontWeight: FontWeight.w800, color: Colors.black.withOpacity(.75)),
       ),
     );
+    
   }
 
   @override

@@ -1,15 +1,19 @@
 // models/apartment.dart
+// ============================================================
+// apartment_model.dart - نموذج الشقة
+// ============================================================
+
 class Apartment {
   final int id;
   final String title;
   final String description;
   final String governorate;
   final String city;
-  final int price;
+  final double price;
   final int rooms;
-  final String image; // URL أو مسار
+  final String image; // URL أو مسار حسب الباك
 
-  const Apartment({
+  Apartment({
     required this.id,
     required this.title,
     required this.description,
@@ -20,23 +24,28 @@ class Apartment {
     required this.image,
   });
 
-  String get address => '$governorate - $city';
-
   factory Apartment.fromJson(Map<String, dynamic> json) {
-    int _toInt(dynamic v) {
+    int toInt(dynamic v) {
+      if (v == null) return 0;
       if (v is int) return v;
       if (v is num) return v.toInt();
       return int.tryParse(v.toString()) ?? 0;
     }
 
+    double toDouble(dynamic v) {
+      if (v == null) return 0;
+      if (v is num) return v.toDouble();
+      return double.tryParse(v.toString()) ?? 0;
+    }
+
     return Apartment(
-      id: _toInt(json['id']),
+      id: toInt(json['id']),
       title: (json['title'] ?? '').toString(),
       description: (json['description'] ?? '').toString(),
       governorate: (json['governorate'] ?? '').toString(),
       city: (json['city'] ?? '').toString(),
-      price: _toInt(json['price']),
-      rooms: _toInt(json['rooms']),
+      price: toDouble(json['price']),
+      rooms: toInt(json['rooms']),
       image: (json['image'] ?? '').toString(),
     );
   }

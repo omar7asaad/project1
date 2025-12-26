@@ -2,7 +2,7 @@
 import 'package:http/http.dart' as http;
 
 class LogoutApi {
-  final String baseUrl = "http://10.210.241.144:8000";
+  final String baseUrl = "http://10.206.50.107:8000/api";
 
   Future<void> logout(String token) async {
     final uri1 = Uri.parse('$baseUrl/logout');

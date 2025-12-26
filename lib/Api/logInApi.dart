@@ -33,7 +33,7 @@ class Loginapi {
   // 
   // للإنتاج:
   //   - "https://your-server.com"
-  final String baseUrl = "http://10.210.241.144:8000";
+  final String baseUrl = "http://10.206.50.107:8000/api";
   
   // ----------------------------------------------------------
   // Constructor - المُنشئ الفارغ
